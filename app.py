@@ -7,7 +7,7 @@ import os
 TOKEN = os.environ['apiKey']
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 counterClick = 0
-startTime = time.time()
+startTime = datetime.datetime.now()
 
 def get_url(url):
     response = requests.get(url)
@@ -66,7 +66,7 @@ def using_Counter_Up():
 
 def get_up_time():
     global startTime
-    return time.time() - startTime
+    return (datetime.datetime.now() - startTime)
 
 def command_switch_response(command):
     return {
