@@ -7,6 +7,7 @@ import os
 TOKEN = os.environ['apiKey']
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 counterClick = 0
+startTime = time.time()
 
 def get_url(url):
     response = requests.get(url)
@@ -58,16 +59,21 @@ def echo_all(updates):
         except Exception as e:
             print(e)    
     
-def usingCounterUp():
+def using_Counter_Up():
     global counterClick
     counterClick = counterClick + 1
     return counterClick
+
+def get_up_time():
+    global startTime
+    return time.time() - startTime
 
 def command_switch_response(command):
     return {
         'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - number of using in this command",
         'time': datetime.datetime.now(),
-        'counter' : usingCounterUp()
+        'counter' : using_Counter_Up(),
+        'uptime' : get_up_time()
     }[command]
 
 def main():
