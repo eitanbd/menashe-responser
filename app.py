@@ -70,7 +70,7 @@ def get_up_time():
 
 def command_switch_response(command):
     return {
-        'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - number of using in this command",
+        'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - Counter of this command.\nUptime - how long am i up.",
         'time': datetime.datetime.now(),
         'counter' : using_Counter_Up(),
         'uptime' : get_up_time()
