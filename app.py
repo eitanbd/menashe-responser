@@ -59,11 +59,15 @@ def echo_all(updates):
         except Exception as e:
             print(e)    
     
+def usingCounterUp():
+    counterClick = counterClick + 1
+    return counterClick
+
 def command_switch_response(command):
     return {
         'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - number of using in this command",
         'time': datetime.datetime.now(),
-        'counter' : counterClick += 1
+        'counter' : usingCounterUp
     }[command]
 
 def main():
