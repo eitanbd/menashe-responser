@@ -2,8 +2,9 @@ import json
 import requests
 import datetime
 import time
+import os
 
-TOKEN = "590047249:AAFc8gMmfr7szWCH7_zF60eWqMMtmKR-Njk"
+TOKEN = os.environ['apiKey']
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
@@ -55,7 +56,7 @@ def echo_all(updates):
             send_message(response, chat)  
             
         except Exception as e:
-            print(e)
+            print(e)    
     
 def command_switch_response(command):
     return {
