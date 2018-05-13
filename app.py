@@ -6,6 +6,7 @@ import os
 
 TOKEN = os.environ['apiKey']
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
+counterClick = 0
 
 
 def get_url(url):
@@ -60,8 +61,9 @@ def echo_all(updates):
     
 def command_switch_response(command):
     return {
-        'help': "commands available:\nhelp - returns the available commands.\n time - returns the current time.",
-        'time': datetime.datetime.now()
+        'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - number of using in this command",
+        'time': datetime.datetime.now(),
+        'counter' : counterClick += 1
     }[command]
 
 def main():
