@@ -75,16 +75,20 @@ def get_up_time():
 def command_switch_response(command):
     print("switching the command:{}".format(command))
     
-    commands = {'help': "commands available:{}".format(
-            "\nHelp - returns the available commands." +
-            "\nTime - returns the current time." +
-            "\nCounter - Counter of this command." +
-            "\nUptime - how long am i up."),
-        'time': datetime.datetime.now(),
-        'counter': using_Counter_Up(),
-        'uptime': get_up_time()}
+    if(command == "help"):
+        "commands available:{}".format(
+        "\nHelp - returns the available commands." +
+        "\nTime - returns the current time." +
+        "\nCounter - Counter of this command." +
+        "\nUptime - how long am i up.")
 
-    return commands.get(command, "no such command")
+    if(command == "time"):
+        return datetime.datetime.now()
+    if(command == "counter"):
+        return using_Counter_Up()
+    if(command == "uptime"):
+        return get_up_time()
+    return "no such command: {}".format(command)
 
 def main():
     last_update_id = None
