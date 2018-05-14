@@ -68,13 +68,14 @@ def using_Counter_Up():
     return counterClick
 
 def get_up_time():
+    print("uptime is about to calc")
     global startTime
     return (datetime.datetime.now() - startTime)
 
 def command_switch_response(command):
     print("switching the command:{}".format(command))
     
-    return dict({
+    return {
         'help': "commands available:{}".format(
             "\nHelp - returns the available commands." +
             "\nTime - returns the current time." +
@@ -83,7 +84,7 @@ def command_switch_response(command):
         'time': datetime.datetime.now(),
         'counter': using_Counter_Up(),
         'uptime': get_up_time()
-    })[command]
+    }[command]
 
 def main():
     last_update_id = None
