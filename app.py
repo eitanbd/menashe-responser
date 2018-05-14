@@ -75,7 +75,7 @@ def get_up_time():
 def command_switch_response(command):
     print("switching the command:{}".format(command))
     
-    return {
+    response = {
         'help': "commands available:{}".format(
             "\nHelp - returns the available commands." +
             "\nTime - returns the current time." +
@@ -85,6 +85,9 @@ def command_switch_response(command):
         'counter': using_Counter_Up(),
         'uptime': get_up_time()
     }[command]
+    
+    print(response)
+    return response
 
 def main():
     last_update_id = None
