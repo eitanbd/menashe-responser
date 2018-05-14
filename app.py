@@ -61,7 +61,7 @@ def echo_all(updates):
     
 def using_Counter_Up():
     global counterClick
-    counterClick = counterClick + 1
+    counterClick += 1
     return counterClick
 
 def get_up_time():
