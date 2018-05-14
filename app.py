@@ -62,9 +62,9 @@ def echo_all(updates):
 def using_Counter_Up():
     print("starting countering up")
     global counterClick
-    print("before:{counterClick}",counterClick)
+    print("counterClick before:{}".format(counterClick))
     counterClick += 1
-    print("after:{counterClick}",counterClick)
+    print("counterClick after:{}".format(counterClick))
     return counterClick
 
 def get_up_time():
@@ -72,11 +72,16 @@ def get_up_time():
     return (datetime.datetime.now() - startTime)
 
 def command_switch_response(command):
-    print("switching the command:{command}",command)
+    print("switching the command:{}".format(command))
+    
     return {
-        'counter': using_Counter_Up(),
-        'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - Counter of this command.\nUptime - how long am i up.",
+        'help': "commands available:{}".format(
+            "\nHelp - returns the available commands." +
+            "\nTime - returns the current time." +
+            "\nCounter - Counter of this command." +
+            "\nUptime - how long am i up."),
         'time': datetime.datetime.now(),
+        'counter': using_Counter_Up(),
         'uptime': get_up_time()
     }[command]
 
