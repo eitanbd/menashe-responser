@@ -72,6 +72,9 @@ def get_up_time():
     global startTime
     return (datetime.datetime.now() - startTime)
 
+def getHashVal():
+    return hash(datetime.datetime.now())
+
 def command_switch_response(command):
     print("switching the command:{}".format(command))
     
@@ -79,13 +82,15 @@ def command_switch_response(command):
             "\nHelp - returns the available commands." +
             "\nTime - returns the current time." +
             "\nCounter - Counter of this command." +
-            "\nUptime - how long am i up.")
+            "\nUptime - how long am i up." +
+            "\nHash - get a hashed string.")
 
     commands = {'/start': "Welcome to Eitan's first Bot!\n" + helpText,
                 'help': helpText,
                 'time': datetime.datetime.now,
                 'counter': using_Counter_Up,
-                'uptime': get_up_time}
+                'uptime': get_up_time,
+                'hash': getHashVal}
 
     response = commands.get(command, "no such command")
     if callable(response):
