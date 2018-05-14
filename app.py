@@ -76,8 +76,8 @@ def command_switch_response(command):
     return {
         'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - Counter of this command.\nUptime - how long am i up.",
         'time': datetime.datetime.now(),
-        'counter' : using_Counter_Up(),
-        'uptime' : get_up_time()
+        'counter': using_Counter_Up(),
+        'uptime': get_up_time()
     }[command]
 
 def main():
