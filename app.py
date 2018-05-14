@@ -54,7 +54,7 @@ def echo_all(updates):
             chat = update["message"]["chat"]["id"]
             
             response = command_switch_response(text.lower())
-            send_message(response, chat)  
+            send_message(response, chat)
             
         except Exception as e:
             print(e)    
@@ -74,9 +74,9 @@ def get_up_time():
 def command_switch_response(command):
     print("switching the command:{command}",command)
     return {
+        'counter': using_Counter_Up(),
         'help': "commands available:\nHelp - returns the available commands.\nTime - returns the current time.\nCounter - Counter of this command.\nUptime - how long am i up.",
         'time': datetime.datetime.now(),
-        'counter': using_Counter_Up(),
         'uptime': get_up_time()
     }[command]
 
