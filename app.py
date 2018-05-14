@@ -81,7 +81,7 @@ def command_switch_response(command):
             "\nCounter - Counter of this command." +
             "\nUptime - how long am i up.")
 
-    commands = {'/start': helpText,
+    commands = {'/start': "Welcome to eitan's first Bot!\n" + helpText,
                 'help': helpText,
                 'time': datetime.datetime.now,
                 'counter': using_Counter_Up,
