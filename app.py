@@ -75,7 +75,7 @@ def get_up_time():
 def command_switch_response(command):
     print("switching the command:{}".format(command))
     
-    helpText = "commands available:{}".format(
+    helpText = "Commands available:{}".format(
             "\nHelp - returns the available commands." +
             "\nTime - returns the current time." +
             "\nCounter - Counter of this command." +
