@@ -84,7 +84,10 @@ def command_switch_response(command):
         'counter': using_Counter_Up,
         'uptime': get_up_time}
 
-    return commands.get(command, "no such command")
+    response = commands.get(command, "no such command")
+    if callable(response):
+        return response()
+    return response
 
 def main():
     last_update_id = None
