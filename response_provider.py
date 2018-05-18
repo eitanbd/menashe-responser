@@ -15,7 +15,7 @@ def command_switch_response(command):
 
     commands = {'/start': "Welcome to Eitan's first Bot!\n" + helpText,
                 'help': helpText,
-                'time': datetime.datetime.now,
+                'time': datetime.datetime.utcnow,
                 'counter': using_Counter_Up,
                 'uptime': get_up_time,
                 'hash': getHashVal}
