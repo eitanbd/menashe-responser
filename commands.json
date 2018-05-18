@@ -3,10 +3,10 @@
     
     "commands":{
     "/start" : {"text" :"Welcome to Eitan's first Bot!\n helpText"},
-    "help" : {"text" :"help text"},
-    "time": {"text" : "datetime.datetime.now"},
-    "counter": {"text":"using_Counter_Up"},
-    "uptime":{"text":"get_up_time"},
-    "hash":{"text":"getHashVal"},
-    "save person":  [{"text" :"enter full name:", "func" : "setPersonName"},{"text" :"enter age:", "func" : "setAge"}]}  
+    "/help" : {"text" :"help text"},
+    "/time": {"text" : "datetime.datetime.now"},
+    "/counter": {"text":"using_Counter_Up"},
+    "/uptime":{"text":"get_up_time"},
+    "/hash":{"text":"getHashVal"},
+    "/save person":  [{"text" :"enter full name:", "func" : "setPersonName"},{"text" :"enter age:", "func" : "setAge"}]}  
 }
