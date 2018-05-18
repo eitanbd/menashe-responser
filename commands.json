@@ -1,5 +1,5 @@
 {
-    "helptext" : "Commands available:\n/Help - returns the available commands.\n/Time - returns the current time.\n/Counter - Counter of this command.\n/Uptime - how long am i up.\n/Hash - get a hashed string.",
+    "helptext" : "Commands available:\nHelp - returns the available commands.\n/Time - returns the current time.\n/Counter - Counter of this command.\n/Uptime - how long am i up.\n/Hash - get a hashed string.",
     
     "commands":{
     "/start" : {"text" :"Welcome to Eitan's first Bot!\n helpText"},

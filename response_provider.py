@@ -7,18 +7,18 @@ def command_switch_response(command):
     print("switching the command:{}".format(command))
     
     helpText = "Commands available:{}".format(
-            "\nHelp - returns the available commands." +
-            "\nTime - returns the current time." +
-            "\nCounter - Counter of this command." +
-            "\nUptime - how long am i up." +
-            "\nHash - get a hashed string.")
+            "\n/Help - returns the available commands." +
+            "\n/Time - returns the current time." +
+            "\n/Counter - Counter of this command." +
+            "\n/Uptime - how long am i up." +
+            "\n/Hash - get a hashed string.")
 
     commands = {'/start': "Welcome to Eitan's first Bot!\n" + helpText,
-                'help': helpText,
-                'time': datetime.datetime.utcnow,
-                'counter': using_Counter_Up,
-                'uptime': get_up_time,
-                'hash': getHashVal}
+                '/help': helpText,
+                '/time': datetime.datetime.utcnow,
+                '/counter': using_Counter_Up,
+                '/uptime': get_up_time,
+                '/hash': getHashVal}
 
     response = commands.get(command, "no such command")
     if callable(response):
